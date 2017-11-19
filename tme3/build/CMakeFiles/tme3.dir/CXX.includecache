@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/damien/Documents/mobj/tme3/src/GPL_2_text.h
+
+/home/damien/Documents/mobj/tme3/src/Main.cpp
+string
+-
+iostream
+-
+vector
+-
+list
+-
+map
+-
+algorithm
+-
+Timer.h
+/home/damien/Documents/mobj/tme3/src/Timer.h
+GPL_2_text.h
+/home/damien/Documents/mobj/tme3/src/GPL_2_text.h
+
+/home/damien/Documents/mobj/tme3/src/Timer.h
+ctime
+-
+iostream
+-
+

@@ -6,20 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/damien/Documents/mobj/tme45/src/Cell.cpp
-string
--
-cstdlib
--
-Cell.h
-/home/damien/Documents/mobj/tme45/src/Cell.h
-Term.h
-/home/damien/Documents/mobj/tme45/src/Term.h
-Net.h
-/home/damien/Documents/mobj/tme45/src/Net.h
-Instance.h
-/home/damien/Documents/mobj/tme45/src/Instance.h
-
 /home/damien/Documents/mobj/tme45/src/Cell.h
 string
 -
@@ -62,16 +48,6 @@ Instance.h
 Cell.h
 /home/damien/Documents/mobj/tme45/src/Cell.h
 
-/home/damien/Documents/mobj/tme45/src/Net.cpp
-Node.h
-/home/damien/Documents/mobj/tme45/src/Node.h
-Instance.h
-/home/damien/Documents/mobj/tme45/src/Instance.h
-Net.h
-/home/damien/Documents/mobj/tme45/src/Net.h
-Cell.h
-/home/damien/Documents/mobj/tme45/src/Cell.h
-
 /home/damien/Documents/mobj/tme45/src/Net.h
 limits
 -
@@ -81,20 +57,6 @@ vector
 -
 Term.h
 /home/damien/Documents/mobj/tme45/src/Term.h
-
-/home/damien/Documents/mobj/tme45/src/Node.cpp
-limits
--
-Node.h
-/home/damien/Documents/mobj/tme45/src/Node.h
-Term.h
-/home/damien/Documents/mobj/tme45/src/Term.h
-Net.h
-/home/damien/Documents/mobj/tme45/src/Net.h
-Instance.h
-/home/damien/Documents/mobj/tme45/src/Instance.h
-Cell.h
-/home/damien/Documents/mobj/tme45/src/Cell.h
 
 /home/damien/Documents/mobj/tme45/src/Node.h
 iostream
@@ -111,18 +73,6 @@ iostream
 -
 Indentation.h
 /home/damien/Documents/mobj/tme45/src/Indentation.h
-
-/home/damien/Documents/mobj/tme45/src/Term.cpp
-Point.h
-/home/damien/Documents/mobj/tme45/src/Point.h
-Term.h
-/home/damien/Documents/mobj/tme45/src/Term.h
-Cell.h
-/home/damien/Documents/mobj/tme45/src/Cell.h
-Instance.h
-/home/damien/Documents/mobj/tme45/src/Instance.h
-Net.h
-/home/damien/Documents/mobj/tme45/src/Net.h
 
 /home/damien/Documents/mobj/tme45/src/Term.h
 iostream
