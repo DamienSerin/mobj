@@ -7,7 +7,6 @@ using namespace std;
 
 namespace Netlist {
   Net::Net( Cell* s, const std::string& name,Term::Type dir):owner_(s),name_(name),type_(dir),id_(s->newNetId()){
-    //cerr << "net::net " << (void*)this << endl;
     s->add(this);
   }
 
@@ -46,9 +45,7 @@ namespace Netlist {
   }
 
   void Net::add( Node* n){
-    //std::cerr<<"["<<name_;std::cerr<<"] adding node (from term) "<<n->getTerm()->getName();std::cerr<<std::endl;
     if(n->getId() && (n->getId() < nodes_.size()) && !nodes_[n->getId()] ){
-      //std::cerr<<" Using choosen free id "<<n->getId();std::cerr<<std::endl;
       nodes_[n->getId()]=n;
     }
     else{
@@ -56,12 +53,10 @@ namespace Netlist {
       if(x == -1){
         // If no existing and free, create new
         int i = nodes_.size();
-        //std::cerr<<" Adding new space id "<<i;std::cerr<<std::endl;
         nodes_.push_back(n);
         n->setId(i);
       }
       else{
-        //std::cerr<<" Using first free id "<<x;std::cerr<<std::endl;
         nodes_[x]=n;
         n->setId(x);
       }
@@ -70,7 +65,6 @@ namespace Netlist {
 
   bool Net::remove( Node* n){
     if(nodes_[n->getId()]!=n){
-      //std::cerr<<"Net::remove: Unknown node";
       return false;
     }
     nodes_[n->getId()]=NULL;
@@ -82,7 +76,6 @@ namespace Netlist {
   void Net::toXml(std::ostream& s){
     s<<indent<<"<net name=\""<<name_;s<<"\" type=\""<<Term::toString(type_);s<<"\" >"<<std::endl;
     indent++;
-    //std::cerr<<"Nodes: "<<nodes_.size();std::cerr<<std::endl;
     for(int x=0;x<nodes_.size();x++){
       if(nodes_[x]){nodes_[x]->toXml(s);}
     }

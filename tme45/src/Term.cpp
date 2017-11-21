@@ -102,17 +102,6 @@ namespace Netlist {
       default: return "Unknown";
     }
   }
-
-  /*static Term::Direction toDirection( std::string d){
-    switch(d){
-      case "In": return Term::Direction::In;
-      case "Out": return Term::Direction::Out;
-      case "Inout": return Direction::Inout;
-      case "Tristate": return Direction::Tristate;
-      case "Transcv": return Direction::Transcv;
-      default: return Direction::Unknown;
-    }
-*/
     void Term::toXml(std::ostream& s){
       s<<indent<<"<term name=\""<< name_ ;s<< "\" direction=\"" << Term::toString(direction_) ; s<< "\" />" << std::endl;
     }

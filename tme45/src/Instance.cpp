@@ -31,7 +31,6 @@ namespace Netlist {
 
   Term* Instance::getTerm( const std::string& s) const{
     for(std::vector<Term*>::const_iterator x = terms_.begin() ; x != terms_.end();x++){
-      //std::cerr<<" Checking term "<< (*x)->getName();
       if((*x)->getName() == s){return (*x);}
     }
     return NULL;
@@ -42,14 +41,11 @@ namespace Netlist {
   }
 
   bool Instance::connect(const std::string& name, Net* n){
-    //std::cerr<<"["<<name_;std::cerr<<"] Connecting "<<name;std::cerr<<" ("<<getTerms().size();std::cerr<<" )"<<std::endl;
     Term* x;
     if((x = getTerm(name))==NULL){
       std::cerr<<" [ERROR]["<<name_;std::cerr<<"] Couldnt find "<<name;std::cerr<<std::endl;
       return false;
     }
-
-    //std::cerr<<" Found term, adding."<<std::endl;
     x->setNet(n);
     return true;
 

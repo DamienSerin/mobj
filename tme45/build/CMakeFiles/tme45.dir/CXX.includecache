@@ -20,6 +20,16 @@ string
 iostream
 -
 
+/home/damien/Documents/mobj/tme45/src/Instance.cpp
+Point.h
+/home/damien/Documents/mobj/tme45/src/Point.h
+Instance.h
+/home/damien/Documents/mobj/tme45/src/Instance.h
+Cell.h
+/home/damien/Documents/mobj/tme45/src/Cell.h
+Term.h
+/home/damien/Documents/mobj/tme45/src/Term.h
+
 /home/damien/Documents/mobj/tme45/src/Instance.h
 iostream
 -
@@ -30,21 +40,13 @@ string
 Indentation.h
 /home/damien/Documents/mobj/tme45/src/Indentation.h
 
-/home/damien/Documents/mobj/tme45/src/Main.cpp
-string
--
-sstream
--
-iostream
--
-memory
--
-Term.h
-/home/damien/Documents/mobj/tme45/src/Term.h
-Net.h
-/home/damien/Documents/mobj/tme45/src/Net.h
+/home/damien/Documents/mobj/tme45/src/Net.cpp
+Node.h
+/home/damien/Documents/mobj/tme45/src/Node.h
 Instance.h
 /home/damien/Documents/mobj/tme45/src/Instance.h
+Net.h
+/home/damien/Documents/mobj/tme45/src/Net.h
 Cell.h
 /home/damien/Documents/mobj/tme45/src/Cell.h
 
@@ -73,6 +75,18 @@ iostream
 -
 Indentation.h
 /home/damien/Documents/mobj/tme45/src/Indentation.h
+
+/home/damien/Documents/mobj/tme45/src/Term.cpp
+Point.h
+/home/damien/Documents/mobj/tme45/src/Point.h
+Term.h
+/home/damien/Documents/mobj/tme45/src/Term.h
+Cell.h
+/home/damien/Documents/mobj/tme45/src/Cell.h
+Instance.h
+/home/damien/Documents/mobj/tme45/src/Instance.h
+Net.h
+/home/damien/Documents/mobj/tme45/src/Net.h
 
 /home/damien/Documents/mobj/tme45/src/Term.h
 iostream

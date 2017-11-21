@@ -211,13 +211,21 @@ namespace map_bench {
 }
 
 int main(){
-    //vector_bench::backInsert();
-    //vector_bench::frontInsert();
-    //vector_bench::sortEachInsert();
+    vector_bench::backInsert();
+    cout << "\n\n" << endl;
+    vector_bench::frontInsert();
+    cout << "\n\n" << endl;
+    vector_bench::sortEachInsert();
+    cout << "\n\n" << endl;
 
-    //list_bench::backInsert();
-    //list_bench::frontInsert();
-    //list_bench::sortEachInsert();
+    list_bench::backInsert();
+    cout << "\n\n" << endl;
+    list_bench::frontInsert();
+    cout << "\n\n" << endl;
+    list_bench::sortEachInsert();
+    cout << "\n\n" << endl;
 
     map_bench::mapGpl();
+
+    return 0;
 }
