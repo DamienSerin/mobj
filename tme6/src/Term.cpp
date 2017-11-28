@@ -41,6 +41,10 @@ namespace Netlist {
         return net_;
     }
 
+    Node* Term::getNode(){
+        return &node_;
+    }
+
     Cell* Term::getCell() const{
         return (type_==Internal)?NULL:static_cast<Cell*>(owner_);
     }
@@ -113,24 +117,41 @@ namespace Netlist {
         if(d == "Transcv") return Term::Transcv;
         return Term::Unknown;
     }
-        void Term::toXml(std::ostream& s){
-            s<<indent<<"<term name=\""<< name_ ;s<< "\" direction=\"" << Term::toString(direction_) ; s<< "\" />" << std::endl;
-        }
 
-        Term* Term::fromXml(Cell* c, xmlTextReaderPtr reader){
-            const xmlChar* nodeTag  = xmlTextReaderConstString        ( reader, (const xmlChar*)"term" );
-            const xmlChar* nodeName = xmlTextReaderConstLocalName     ( reader );
-            Term* term = NULL;
-
-            if(nodeTag == nodeName){
-
-                std::string termName = xmlCharToString( xmlTextReaderGetAttribute( reader, (const xmlChar*)"name" ) );
-                std::string termDirection = xmlCharToString( xmlTextReaderGetAttribute( reader, (const xmlChar*)"direction" ) );
-                Direction d = term->toDirection(termDirection);
-                term = new Term(c, termName, d);
-                term->toXml(std::cout);
-                return term;
-            }
-            return NULL;
-        }
+    Term::Type Term::toType(std::string t){
+        if(t == "Internal") return Term::Internal;
+        else return Term::External;
     }
+
+    void Term::toXml(std::ostream& s){
+        Point p = Term::getPosition();
+        int x = p.getX();
+        int y = p.getY();
+
+        s<<indent<<"<term name=\""<< name_ ;s<< "\" direction=\"" << Term::toString(direction_) ; s<< "\" x=\"" << x ;s<< "\" y=\"" << y ;s<< "\"/>" << std::endl;
+    }
+
+    Term* Term::fromXml(Cell* c, xmlTextReaderPtr reader){
+        const xmlChar* nodeTag  = xmlTextReaderConstString        ( reader, (const xmlChar*)"term" );
+        const xmlChar* nodeName = xmlTextReaderConstLocalName     ( reader );
+        Term* term = NULL;
+
+        if(nodeTag == nodeName){
+
+            std::string termName = xmlCharToString( xmlTextReaderGetAttribute( reader, (const xmlChar*)"name" ) );
+            std::string termDirection = xmlCharToString( xmlTextReaderGetAttribute( reader, (const xmlChar*)"direction" ) );
+            Direction d = term->toDirection(termDirection);
+
+            if(termName.empty()) return NULL;
+
+            term = new Term(c, termName, d);
+
+            int termX = 0;
+            int termY = 0;
+            xmlGetIntAttribute( reader, "x", termX );
+            xmlGetIntAttribute( reader, "y", termY );
+            term->setPosition(termX, termY);
+        }
+        return term;
+    }
+}

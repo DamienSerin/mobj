@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include "Term.h"
+#include <libxml/xmlreader.h>
 
 namespace Netlist {
 
@@ -34,8 +35,8 @@ namespace Netlist {
 			Net (const Net&);
 			Cell*					owner_;
 			const std::string 		name_;
-			unsigned int 			id_;
 			Term::Type 				type_;
+			unsigned int 			id_;
 			std::vector<Node*> 		nodes_;
 	};
 

@@ -2,6 +2,7 @@
 #include "Instance.h"
 #include "Net.h"
 #include "Cell.h"
+#include "XmlUtil.h"
 
 using namespace std;
 
@@ -74,7 +75,7 @@ namespace Netlist {
     }
 
     void Net::toXml(std::ostream& s){
-        s<<indent<<"<net name=\""<<name_;s<<"\" type=\""<<Term::toString(type_);s<<"\" >"<<std::endl;
+        s<<indent<<"<net name=\""<<name_;s<<"\" type=\""<<Term::toString(type_);s<<"\">"<<std::endl;
         indent++;
         for(int x=0;x<nodes_.size();x++){
             if(nodes_[x]){nodes_[x]->toXml(s);}
@@ -84,29 +85,24 @@ namespace Netlist {
     }
 
     Net* Net::fromXml(Cell* c, xmlTextReaderPtr reader){
+        Net* net = NULL;
+
         const xmlChar* nodeTag  = xmlTextReaderConstString        ( reader, (const xmlChar*)"net" );
         const xmlChar* nodeName = xmlTextReaderConstLocalName     ( reader );
 
-        if(nodeTag == nodeName){
+        if((nodeTag == nodeName) and !(xmlTextReaderNodeType(reader) == XML_READER_TYPE_END_ELEMENT))
+        {
             std::string netName = xmlCharToString( xmlTextReaderGetAttribute( reader, (const xmlChar*)"name" ) );
             std::string netType = xmlCharToString( xmlTextReaderGetAttribute( reader, (const xmlChar*)"type" ) );
 
-            while( !( (nodeName == nodeTag) and (xmlTextReaderNodeType(reader) == XML_READER_TYPE_END_ELEMENT) ) ){
-                
+            Term::Type t = Term::toType(netType);
+            net = new Net(c, netName, t);
+
+            while(!((nodeTag == nodeName) and (xmlTextReaderNodeType(reader) == XML_READER_TYPE_END_ELEMENT))){
+                xmlTextReaderRead(reader);
+                if( !(Node::fromXml(net, reader)) ) return NULL;
             }
         }
-        /*
-        Cell* mastercell = NULL;
-        Instance* instance = NULL;
-        if(nodeTag == nodeName){
-
-            std::string instanceName = xmlCharToString( xmlTextReaderGetAttribute( reader, (const xmlChar*)"name" ) );
-            std::string mastercellName = xmlCharToString( xmlTextReaderGetAttribute( reader, (const xmlChar*)"mastercell" ) );
-            mastercell = mastercell->find(mastercellName);
-            instance = new Instance(c, mastercell, instanceName);
-            instance->toXml(std::cout);
-            return instance;
-        }
-        return NULL;*/
+        return net;
     }
 }

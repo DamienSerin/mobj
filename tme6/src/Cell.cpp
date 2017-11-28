@@ -283,7 +283,10 @@ namespace Netlist {
                     state = EndCell;
                     continue;
                 } else {
-                    //if (Net::fromXml(cell,reader)) continue;
+                    /*int line;
+                    line = xmlTextReaderGetParserLineNumber(reader);
+                    cout << "in cell line : " << line << endl;*/
+                    if (Net::fromXml(cell,reader)) continue;
                 }
                 break;
                 case EndCell:

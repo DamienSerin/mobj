@@ -100,7 +100,7 @@ int main ( int argc, char* argv[] )
     fa_or1->connect( "i1", fa_carr1);
     fa_or1->connect(  "q", fa_cout);
     fulladder->toXml( cout );*/
-    cout << "Chargement des modeles:" << endl;
+    //cout << "Chargement des modeles:" << endl;
     cout << "- <and2> ..." << endl;
     Cell::load( "and2" );
 
@@ -112,13 +112,9 @@ int main ( int argc, char* argv[] )
 
     cout << "- <halfadder> ..." << endl;
     Cell* halfadder = Cell::load( "halfadder" );
-/*
-    cout << "\nContenu du <halfadder>:" << endl;
+
+    cout << "\nContenu du <halfadder>:\n" << endl;
     halfadder->toXml( cout );
-*/
-
-
-
 
     return 0;
 }
