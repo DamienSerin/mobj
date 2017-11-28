@@ -15,31 +15,11 @@ namespace Netlist {
 
     Instance::~Instance(){}
 
-    const std::string& Instance::getName() const{
-        return name_;
-    }
-
-    Cell* Instance::getMasterCell() const{
-        return masterCell_;
-    }
-
-    Cell* Instance::getCell() const{
-        return owner_;
-    }
-
-    const std::vector<Term*>& Instance::getTerms() const{
-        return terms_;
-    }
-
     Term* Instance::getTerm( const std::string& s) const{
         for(std::vector<Term*>::const_iterator x = terms_.begin() ; x != terms_.end();x++){
             if((*x)->getName() == s){return (*x);}
         }
         return NULL;
-    }
-
-    Point Instance::getPosition() const{
-        return position_;
     }
 
     bool Instance::connect(const std::string& name, Net* n){
@@ -62,14 +42,6 @@ namespace Netlist {
             if((*x) == t){terms_.erase(x);}
         }
         return;
-    }
-
-    void Instance::setPosition( const Point& p){
-        position_ = p;
-    }
-
-    void Instance::setPosition( int x, int y){
-        position_ = Point(x,y);
     }
 
     void Instance::toXml(std::ostream& s){
@@ -100,5 +72,4 @@ namespace Netlist {
         }
         return instance;
     }
-
 }

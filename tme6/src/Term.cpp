@@ -25,26 +25,6 @@ namespace Netlist {
         }
     }
 
-    bool Term::isInternal() const{
-        return (type_==Internal)?true:false;
-    }
-
-    bool Term::isExternal() const{
-        return (type_==External)?true:false;
-    }
-
-    const std::string& Term::getName() const{
-        return name_;
-    }
-
-    Net* Term::getNet() const{
-        return net_;
-    }
-
-    Node* Term::getNode(){
-        return &node_;
-    }
-
     Cell* Term::getCell() const{
         return (type_==Internal)?NULL:static_cast<Cell*>(owner_);
     }
@@ -57,18 +37,6 @@ namespace Netlist {
         return (type_==Internal)?static_cast<Instance*>(owner_):NULL;
     }
 
-    Term::Direction Term::getDirection() const{
-        return direction_;
-    }
-
-    Point Term::getPosition() const{
-        return node_.getPosition();
-    }
-
-    Term::Type Term::getType() const{
-        return type_;
-    }
-
     void Term::setNet( Net* n){
         net_ = n;
         n->add(&node_);
@@ -76,18 +44,6 @@ namespace Netlist {
 
     void Term::setNet( const std::string& s){
         net_ = getOwnerCell()->getNet(s);
-    }
-
-    void Term::setPosition( const Point& p){
-        node_.setPosition(p);
-    }
-
-    void Term::setPosition( int x, int y){
-        node_.setPosition(x,y);
-    }
-
-    void Term::setDirection( Direction d){
-        direction_ = d;
     }
 
     std::string Term::toString( Term::Type t){

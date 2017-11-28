@@ -14,30 +14,6 @@ namespace Netlist {
 
     Net::~Net(){}
 
-    Cell* Net::getCell() const{
-        return owner_;
-    }
-
-    const std::string& Net::getName() const{
-        return name_;
-    }
-
-    unsigned int Net::getId() const{
-        return id_;
-    }
-
-    Term::Type Net::getType() const{
-        return type_;
-    }
-
-    Node* Net::getNode( size_t id) const{
-        return nodes_[id];
-    }
-
-    const std::vector <Node*>& Net::getNodes() const{
-        return nodes_;
-    }
-
     size_t Net::getFreeNodeId() const{
         for(int x=0;x<nodes_.size();x++){
             if(!nodes_[x]){return x;}

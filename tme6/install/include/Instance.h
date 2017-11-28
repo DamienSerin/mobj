@@ -19,20 +19,22 @@ namespace Netlist {
 			Instance(Cell* owner, Cell* model, const std::string&);
 			~Instance();
 
-			const std::string& 				getName			() 									const;
-			Cell* 							getMasterCell	() 									const;
-			Cell* 							getCell			() 									const;
-			const std::vector<Term*>& 		getTerms		() 									const;
-			Term* 							getTerm			(const std::string&) 				const;
-			Point 							getPosition		() 									const;
+			inline 	const std::string& 				getName			() 						const;
+			inline 	Cell* 							getMasterCell	() 						const;
+			inline 	Cell* 							getCell			() 						const;
+			inline 	const std::vector<Term*>& 		getTerms		() 						const;
+					Term* 							getTerm			(const std::string&) 	const;
+			inline 	Point 							getPosition		() 						const;
 
-			bool 							connect			(const std::string& name, Net*);
-			void 							add				(Term*);
-			void 							remove			(Term*);
-			void 							setPosition		(const Point&);
-			void 							setPosition		(int x, int y);
-			static Instance* 				fromXml			(Cell*, xmlTextReaderPtr);
-			void toXml(std::ostream&);
+			inline	void 							setPosition		(const Point&);
+			inline	void 							setPosition		(int x, int y);
+
+					bool 							connect			(const std::string& name, Net*);
+					void 							add				(Term*);
+					void 							remove			(Term*);
+
+			static 	Instance* 						fromXml			(Cell*, xmlTextReaderPtr);
+					void 							toXml			(std::ostream&);
 
 		private:
 			Cell* 					owner_;
@@ -41,6 +43,15 @@ namespace Netlist {
 			std::vector<Term*>		terms_;
 			Point 					position_;
 	};
+
+	inline const 	std::string& 		Instance::getName		() const {return name_;}
+	inline 			Cell* 				Instance::getMasterCell	() const {return masterCell_;}
+	inline 			Cell* 				Instance::getCell		() const {return owner_;}
+	inline const 	std::vector<Term*>& Instance::getTerms		() const {return terms_;}
+	inline 			Point 				Instance::getPosition	() const {return position_;}
+
+	inline			void 				Instance::setPosition	(const Point& p){position_ = p;}
+	inline 			void 				Instance::setPosition	(int x, int y){position_ = Point(x,y);}
 }
 
 #endif

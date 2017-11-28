@@ -22,20 +22,6 @@ string
 iostream
 -
 
-/home/damien/Documents/mobj/tme6/src/Instance.cpp
-Point.h
-/home/damien/Documents/mobj/tme6/src/Point.h
-Instance.h
-/home/damien/Documents/mobj/tme6/src/Instance.h
-Cell.h
-/home/damien/Documents/mobj/tme6/src/Cell.h
-Term.h
-/home/damien/Documents/mobj/tme6/src/Term.h
-XmlUtil.h
-/home/damien/Documents/mobj/tme6/src/XmlUtil.h
-string
--
-
 /home/damien/Documents/mobj/tme6/src/Instance.h
 iostream
 -
@@ -47,6 +33,24 @@ libxml/xmlreader.h
 -
 Indentation.h
 /home/damien/Documents/mobj/tme6/src/Indentation.h
+
+/home/damien/Documents/mobj/tme6/src/Main.cpp
+string
+-
+sstream
+-
+iostream
+-
+memory
+-
+Term.h
+/home/damien/Documents/mobj/tme6/src/Term.h
+Net.h
+/home/damien/Documents/mobj/tme6/src/Net.h
+Instance.h
+/home/damien/Documents/mobj/tme6/src/Instance.h
+Cell.h
+/home/damien/Documents/mobj/tme6/src/Cell.h
 
 /home/damien/Documents/mobj/tme6/src/Net.h
 limits
@@ -60,22 +64,6 @@ Term.h
 libxml/xmlreader.h
 -
 
-/home/damien/Documents/mobj/tme6/src/Node.cpp
-limits
--
-Node.h
-/home/damien/Documents/mobj/tme6/src/Node.h
-Term.h
-/home/damien/Documents/mobj/tme6/src/Term.h
-Net.h
-/home/damien/Documents/mobj/tme6/src/Net.h
-Instance.h
-/home/damien/Documents/mobj/tme6/src/Instance.h
-Cell.h
-/home/damien/Documents/mobj/tme6/src/Cell.h
-XmlUtil.h
-/home/damien/Documents/mobj/tme6/src/XmlUtil.h
-
 /home/damien/Documents/mobj/tme6/src/Node.h
 iostream
 -
@@ -94,22 +82,6 @@ iostream
 Indentation.h
 /home/damien/Documents/mobj/tme6/src/Indentation.h
 
-/home/damien/Documents/mobj/tme6/src/Term.cpp
-Point.h
-/home/damien/Documents/mobj/tme6/src/Point.h
-Term.h
-/home/damien/Documents/mobj/tme6/src/Term.h
-Cell.h
-/home/damien/Documents/mobj/tme6/src/Cell.h
-Instance.h
-/home/damien/Documents/mobj/tme6/src/Instance.h
-Net.h
-/home/damien/Documents/mobj/tme6/src/Net.h
-XmlUtil.h
-/home/damien/Documents/mobj/tme6/src/XmlUtil.h
-string
--
-
 /home/damien/Documents/mobj/tme6/src/Term.h
 iostream
 -
@@ -121,12 +93,6 @@ Indentation.h
 /home/damien/Documents/mobj/tme6/src/Indentation.h
 Node.h
 /home/damien/Documents/mobj/tme6/src/Node.h
-
-/home/damien/Documents/mobj/tme6/src/XmlUtil.h
-libxml/xmlreader.h
--
-string
--
 
 /usr/include/libxml2/libxml/SAX.h
 stdio.h
