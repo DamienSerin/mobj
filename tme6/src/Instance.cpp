@@ -54,16 +54,21 @@ namespace Netlist {
 
         Instance* instance = NULL;
 
+        //vérification du nom du node actuel par rapport au Tag demandé
         if(nodeTag == nodeName){
 
+            //récupération des attributs
             std::string instanceName = xmlCharToString( xmlTextReaderGetAttribute( reader, (const xmlChar*)"name" ) );
             std::string mastercellName = xmlCharToString( xmlTextReaderGetAttribute( reader, (const xmlChar*)"mastercell" ) );
 
+            //test si nom de l'instance ou de la mastercell est vide
             if( instanceName.empty() or mastercellName.empty() ) return NULL;
 
+            //création de l'instance
             Cell* mastercell = mastercell->find(mastercellName);
             instance = new Instance(c, mastercell, instanceName);
 
+            //ajoute de la position
             int instanceX = 0;
             int instanceY = 0;
             xmlGetIntAttribute( reader, "x", instanceX );

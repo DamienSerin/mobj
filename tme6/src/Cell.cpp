@@ -337,8 +337,4 @@ namespace Netlist {
 
         fileStream.close();
     }
-
-
-
-
 }  // Netlist namespace.

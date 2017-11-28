@@ -92,16 +92,21 @@ namespace Netlist {
         const xmlChar* nodeName = xmlTextReaderConstLocalName     ( reader );
         Term* term = NULL;
 
+        //vérification du nom du node actuel par rapport au Tag demandé
         if(nodeTag == nodeName){
 
+            //récupération des attributs
             std::string termName = xmlCharToString( xmlTextReaderGetAttribute( reader, (const xmlChar*)"name" ) );
             std::string termDirection = xmlCharToString( xmlTextReaderGetAttribute( reader, (const xmlChar*)"direction" ) );
             Direction d = term->toDirection(termDirection);
 
+            //test si nom du term est vide
             if(termName.empty()) return NULL;
 
+            //création du term
             term = new Term(c, termName, d);
 
+            //ajout au term de la position
             int termX = 0;
             int termY = 0;
             xmlGetIntAttribute( reader, "x", termX );
