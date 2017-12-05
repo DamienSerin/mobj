@@ -45,7 +45,7 @@ namespace Netlist {
 		inline	bool					isExternal		()	const;
 
 		inline	const std::string&		getName			() const;
-		inline	Node* 					getNode 		();
+		inline	NodeTerm* 				getNode 		();
 		inline	Net* 					getNet 			() const;
 				Cell* 					getCell			() const;
 				Cell* 					getOwnerCell 	() const;
@@ -68,7 +68,7 @@ namespace Netlist {
 		Direction 		direction_;
 		Type 			type_;
 		Net* 			net_;
-		Node 			node_;
+		NodeTerm 		node_;
 
 	};
 
@@ -76,7 +76,7 @@ namespace Netlist {
 	inline			bool 				Term::isExternal	() const	{return (type_==External)?true:false;}
 	inline	const 	std::string& 		Term::getName		() const	{return name_;}
 	inline			Net*				Term::getNet		() const	{return net_;}
-	inline			Node* 				Term::getNode		()			{return &node_;}
+	inline			NodeTerm* 			Term::getNode		()			{return &node_;}
 	inline			Term::Direction 	Term::getDirection	() const	{return direction_;}
 	inline			Point				Term::getPosition	() const	{return node_.getPosition();}
 	inline			Term::Type 			Term::getType		() const	{return type_;}

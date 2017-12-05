@@ -16,15 +16,24 @@ using namespace Netlist;
 int main ( int argc, char* argv[] )
 {
     cout << "Chargement des modeles..." << endl;
-    Cell::load( "vdd" );
-    Cell::load( "gnd" );
-    Cell::load( "TransistorN" );
-    Cell::load( "TransistorP" );
-    Cell::load( "and2" );
-    Cell::load( "or2" );
+    Cell* vdd = Cell::load( "vdd" );
+    vdd->toXml(cout);
+    Cell* gnd = Cell::load( "gnd" );
+    gnd->toXml(cout);
+
+    Cell* TransistorN = Cell::load( "TransistorN" );
+    TransistorN->toXml(cout);
+    Cell* TransistorP = Cell::load( "TransistorP" );
+    TransistorP->toXml(cout);
+
+    Cell* and2 = Cell::load( "and2" );
+    and2->toXml(cout);
+    Cell* or2 = Cell::load( "or2" );
+    or2->toXml(cout);
+
     Cell* xor2      = Cell::load( "xor2" );
     Cell* halfadder = Cell::load( "halfadder" );
-    
+
     cout << "\nContenu du <xor2>:" << endl;
     xor2->toXml( cout );
 
@@ -32,23 +41,4 @@ int main ( int argc, char* argv[] )
     halfadder->toXml( cout );
 
     return 0;
-
-    /*
-    cout << "- <and2> ..." << endl;
-    Cell::load( "and2" );
-
-    cout << "- <or2> ..." << endl;
-    Cell::load( "or2" );
-
-    cout << "- <xor2> ..." << endl;
-    Cell::load( "xor2" );
-
-    cout << "- <halfadder> ..." << endl;
-    Cell* halfadder = Cell::load( "halfadder" );
-
-    cout << "\nContenu du <halfadder>:\n" << endl;
-    halfadder->toXml( cout );
-
-    return 0;
-    */
 }

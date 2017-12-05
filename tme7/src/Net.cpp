@@ -45,6 +45,16 @@ namespace Netlist {
         lines_.push_back( line );
     }
 
+    Node* Net::getNode( size_t id) const{
+        for(int x=0; x<nodes_.size(); x++){
+            if(nodes_[x] and (nodes_[x]->getId() == id)){
+                return nodes_[x];
+            }
+        }
+        return NULL;
+    }
+
+
     bool Net::remove(Node* node){
         if(node){
             size_t id = node->getId();
@@ -75,6 +85,9 @@ namespace Netlist {
         for(int x=0;x<nodes_.size();x++){
             if(nodes_[x]){nodes_[x]->toXml(s);}
         }
+        for(int x=0;x<lines_.size();x++){
+            if(lines_[x]){lines_[x]->toXml(s);}
+        }
         indent--;
         s<<indent<<"</net>"<<std::endl;
     }
@@ -95,28 +108,32 @@ namespace Netlist {
             //création du Net
             Term::Type t = Term::toType(netType);
             net = new Net(c, netName, t);
+            const xmlChar* nTag     = xmlTextReaderConstString        ( reader, (const xmlChar*)"node" );
+            const xmlChar* lineTag  = xmlTextReaderConstString        ( reader, (const xmlChar*)"line" );
 
             //Parcours des éléments fils du net jusqu'à la balise de fermeture
             while(!((nodeTag == nodeName) and (xmlTextReaderNodeType(reader) == XML_READER_TYPE_END_ELEMENT))){
                 //on fait avancer le pointeur
                 xmlTextReaderRead(reader);
 
-                //Appelle de Node::fromXml() pour connecter le net au term.
-                if( !(Node::fromXml(net, reader)) ) return NULL;
+                switch ( xmlTextReaderNodeType(reader) ) {
+                    case XML_READER_TYPE_COMMENT:
+                    case XML_READER_TYPE_WHITESPACE:
+                    case XML_READER_TYPE_SIGNIFICANT_WHITESPACE:
+                    continue;
+                }
+
+                const xmlChar* tmpNodeName = xmlTextReaderConstLocalName     ( reader );
+
+                if(tmpNodeName == nTag){
+                    //Appelle de Node::fromXml() pour connecter le net au term.
+                    if( !(Node::fromXml(net, reader)) ) return NULL;
+                }
+                if(tmpNodeName == lineTag){
+                    if( !(Line::fromXml(net, reader)) ) return NULL;
+                }
             }
         }
         return net;
     }
 }
-
-/*
-bool Net::remove( Node* n){
-if(nodes_[n->getId()]!=n){
-return false;
-}
-nodes_[n->getId()]=NULL;
-n->setId(0);
-n->getTerm()->setNet(NULL);
-return true;
-}
-*/

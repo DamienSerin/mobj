@@ -7,11 +7,6 @@
   </instances>
   <nets>
   </nets>
-  <!--
-  <parameters>
-    <electricalparameter name="v" unit="Volt" value="5.0"/>
-  </parameters>
-  -->
   <symbol>
     <term name="vdd" x1="20" y1="0"  align="bottom_right"/>
     <line x1="0"  y1="20" x2="40" y2="20"/>

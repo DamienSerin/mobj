@@ -144,48 +144,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named tme6
+# Target rules for targets named tme7
 
 # Build rule for target.
-tme6: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tme6
-.PHONY : tme6
+tme7: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tme7
+.PHONY : tme7
 
 # fast build rule for target.
-tme6/fast:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/build
-.PHONY : tme6/fast
-
-ArcShape.o: ArcShape.cpp.o
-.PHONY : ArcShape.o
-
-# target to build an object file
-ArcShape.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/ArcShape.cpp.o
-.PHONY : ArcShape.cpp.o
-
-ArcShape.i: ArcShape.cpp.i
-.PHONY : ArcShape.i
-
-# target to preprocess a source file
-ArcShape.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/ArcShape.cpp.i
-.PHONY : ArcShape.cpp.i
-
-ArcShape.s: ArcShape.cpp.s
-.PHONY : ArcShape.s
-
-# target to generate assembly for a file
-ArcShape.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/ArcShape.cpp.s
-.PHONY : ArcShape.cpp.s
+tme7/fast:
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/build
+.PHONY : tme7/fast
 
 Box.o: Box.cpp.o
 .PHONY : Box.o
 
 # target to build an object file
 Box.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Box.cpp.o
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Box.cpp.o
 .PHONY : Box.cpp.o
 
 Box.i: Box.cpp.i
@@ -193,7 +169,7 @@ Box.i: Box.cpp.i
 
 # target to preprocess a source file
 Box.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Box.cpp.i
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Box.cpp.i
 .PHONY : Box.cpp.i
 
 Box.s: Box.cpp.s
@@ -201,39 +177,15 @@ Box.s: Box.cpp.s
 
 # target to generate assembly for a file
 Box.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Box.cpp.s
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Box.cpp.s
 .PHONY : Box.cpp.s
-
-BoxShape.o: BoxShape.cpp.o
-.PHONY : BoxShape.o
-
-# target to build an object file
-BoxShape.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/BoxShape.cpp.o
-.PHONY : BoxShape.cpp.o
-
-BoxShape.i: BoxShape.cpp.i
-.PHONY : BoxShape.i
-
-# target to preprocess a source file
-BoxShape.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/BoxShape.cpp.i
-.PHONY : BoxShape.cpp.i
-
-BoxShape.s: BoxShape.cpp.s
-.PHONY : BoxShape.s
-
-# target to generate assembly for a file
-BoxShape.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/BoxShape.cpp.s
-.PHONY : BoxShape.cpp.s
 
 Cell.o: Cell.cpp.o
 .PHONY : Cell.o
 
 # target to build an object file
 Cell.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Cell.cpp.o
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Cell.cpp.o
 .PHONY : Cell.cpp.o
 
 Cell.i: Cell.cpp.i
@@ -241,7 +193,7 @@ Cell.i: Cell.cpp.i
 
 # target to preprocess a source file
 Cell.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Cell.cpp.i
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Cell.cpp.i
 .PHONY : Cell.cpp.i
 
 Cell.s: Cell.cpp.s
@@ -249,39 +201,15 @@ Cell.s: Cell.cpp.s
 
 # target to generate assembly for a file
 Cell.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Cell.cpp.s
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Cell.cpp.s
 .PHONY : Cell.cpp.s
-
-EllipseShape.o: EllipseShape.cpp.o
-.PHONY : EllipseShape.o
-
-# target to build an object file
-EllipseShape.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/EllipseShape.cpp.o
-.PHONY : EllipseShape.cpp.o
-
-EllipseShape.i: EllipseShape.cpp.i
-.PHONY : EllipseShape.i
-
-# target to preprocess a source file
-EllipseShape.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/EllipseShape.cpp.i
-.PHONY : EllipseShape.cpp.i
-
-EllipseShape.s: EllipseShape.cpp.s
-.PHONY : EllipseShape.s
-
-# target to generate assembly for a file
-EllipseShape.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/EllipseShape.cpp.s
-.PHONY : EllipseShape.cpp.s
 
 Indentation.o: Indentation.cpp.o
 .PHONY : Indentation.o
 
 # target to build an object file
 Indentation.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Indentation.cpp.o
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Indentation.cpp.o
 .PHONY : Indentation.cpp.o
 
 Indentation.i: Indentation.cpp.i
@@ -289,7 +217,7 @@ Indentation.i: Indentation.cpp.i
 
 # target to preprocess a source file
 Indentation.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Indentation.cpp.i
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Indentation.cpp.i
 .PHONY : Indentation.cpp.i
 
 Indentation.s: Indentation.cpp.s
@@ -297,7 +225,7 @@ Indentation.s: Indentation.cpp.s
 
 # target to generate assembly for a file
 Indentation.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Indentation.cpp.s
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Indentation.cpp.s
 .PHONY : Indentation.cpp.s
 
 Instance.o: Instance.cpp.o
@@ -305,7 +233,7 @@ Instance.o: Instance.cpp.o
 
 # target to build an object file
 Instance.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Instance.cpp.o
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Instance.cpp.o
 .PHONY : Instance.cpp.o
 
 Instance.i: Instance.cpp.i
@@ -313,7 +241,7 @@ Instance.i: Instance.cpp.i
 
 # target to preprocess a source file
 Instance.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Instance.cpp.i
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Instance.cpp.i
 .PHONY : Instance.cpp.i
 
 Instance.s: Instance.cpp.s
@@ -321,7 +249,7 @@ Instance.s: Instance.cpp.s
 
 # target to generate assembly for a file
 Instance.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Instance.cpp.s
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Instance.cpp.s
 .PHONY : Instance.cpp.s
 
 Line.o: Line.cpp.o
@@ -329,7 +257,7 @@ Line.o: Line.cpp.o
 
 # target to build an object file
 Line.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Line.cpp.o
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Line.cpp.o
 .PHONY : Line.cpp.o
 
 Line.i: Line.cpp.i
@@ -337,7 +265,7 @@ Line.i: Line.cpp.i
 
 # target to preprocess a source file
 Line.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Line.cpp.i
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Line.cpp.i
 .PHONY : Line.cpp.i
 
 Line.s: Line.cpp.s
@@ -345,39 +273,15 @@ Line.s: Line.cpp.s
 
 # target to generate assembly for a file
 Line.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Line.cpp.s
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Line.cpp.s
 .PHONY : Line.cpp.s
-
-LineShape.o: LineShape.cpp.o
-.PHONY : LineShape.o
-
-# target to build an object file
-LineShape.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/LineShape.cpp.o
-.PHONY : LineShape.cpp.o
-
-LineShape.i: LineShape.cpp.i
-.PHONY : LineShape.i
-
-# target to preprocess a source file
-LineShape.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/LineShape.cpp.i
-.PHONY : LineShape.cpp.i
-
-LineShape.s: LineShape.cpp.s
-.PHONY : LineShape.s
-
-# target to generate assembly for a file
-LineShape.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/LineShape.cpp.s
-.PHONY : LineShape.cpp.s
 
 Main.o: Main.cpp.o
 .PHONY : Main.o
 
 # target to build an object file
 Main.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Main.cpp.o
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Main.cpp.o
 .PHONY : Main.cpp.o
 
 Main.i: Main.cpp.i
@@ -385,7 +289,7 @@ Main.i: Main.cpp.i
 
 # target to preprocess a source file
 Main.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Main.cpp.i
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Main.cpp.i
 .PHONY : Main.cpp.i
 
 Main.s: Main.cpp.s
@@ -393,7 +297,7 @@ Main.s: Main.cpp.s
 
 # target to generate assembly for a file
 Main.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Main.cpp.s
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Main.cpp.s
 .PHONY : Main.cpp.s
 
 Net.o: Net.cpp.o
@@ -401,7 +305,7 @@ Net.o: Net.cpp.o
 
 # target to build an object file
 Net.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Net.cpp.o
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Net.cpp.o
 .PHONY : Net.cpp.o
 
 Net.i: Net.cpp.i
@@ -409,7 +313,7 @@ Net.i: Net.cpp.i
 
 # target to preprocess a source file
 Net.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Net.cpp.i
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Net.cpp.i
 .PHONY : Net.cpp.i
 
 Net.s: Net.cpp.s
@@ -417,7 +321,7 @@ Net.s: Net.cpp.s
 
 # target to generate assembly for a file
 Net.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Net.cpp.s
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Net.cpp.s
 .PHONY : Net.cpp.s
 
 Node.o: Node.cpp.o
@@ -425,7 +329,7 @@ Node.o: Node.cpp.o
 
 # target to build an object file
 Node.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Node.cpp.o
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Node.cpp.o
 .PHONY : Node.cpp.o
 
 Node.i: Node.cpp.i
@@ -433,7 +337,7 @@ Node.i: Node.cpp.i
 
 # target to preprocess a source file
 Node.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Node.cpp.i
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Node.cpp.i
 .PHONY : Node.cpp.i
 
 Node.s: Node.cpp.s
@@ -441,7 +345,7 @@ Node.s: Node.cpp.s
 
 # target to generate assembly for a file
 Node.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Node.cpp.s
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Node.cpp.s
 .PHONY : Node.cpp.s
 
 Point.o: Point.cpp.o
@@ -449,7 +353,7 @@ Point.o: Point.cpp.o
 
 # target to build an object file
 Point.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Point.cpp.o
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Point.cpp.o
 .PHONY : Point.cpp.o
 
 Point.i: Point.cpp.i
@@ -457,7 +361,7 @@ Point.i: Point.cpp.i
 
 # target to preprocess a source file
 Point.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Point.cpp.i
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Point.cpp.i
 .PHONY : Point.cpp.i
 
 Point.s: Point.cpp.s
@@ -465,7 +369,7 @@ Point.s: Point.cpp.s
 
 # target to generate assembly for a file
 Point.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Point.cpp.s
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Point.cpp.s
 .PHONY : Point.cpp.s
 
 Shape.o: Shape.cpp.o
@@ -473,7 +377,7 @@ Shape.o: Shape.cpp.o
 
 # target to build an object file
 Shape.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Shape.cpp.o
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Shape.cpp.o
 .PHONY : Shape.cpp.o
 
 Shape.i: Shape.cpp.i
@@ -481,7 +385,7 @@ Shape.i: Shape.cpp.i
 
 # target to preprocess a source file
 Shape.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Shape.cpp.i
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Shape.cpp.i
 .PHONY : Shape.cpp.i
 
 Shape.s: Shape.cpp.s
@@ -489,7 +393,7 @@ Shape.s: Shape.cpp.s
 
 # target to generate assembly for a file
 Shape.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Shape.cpp.s
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Shape.cpp.s
 .PHONY : Shape.cpp.s
 
 Symbol.o: Symbol.cpp.o
@@ -497,7 +401,7 @@ Symbol.o: Symbol.cpp.o
 
 # target to build an object file
 Symbol.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Symbol.cpp.o
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Symbol.cpp.o
 .PHONY : Symbol.cpp.o
 
 Symbol.i: Symbol.cpp.i
@@ -505,7 +409,7 @@ Symbol.i: Symbol.cpp.i
 
 # target to preprocess a source file
 Symbol.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Symbol.cpp.i
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Symbol.cpp.i
 .PHONY : Symbol.cpp.i
 
 Symbol.s: Symbol.cpp.s
@@ -513,7 +417,7 @@ Symbol.s: Symbol.cpp.s
 
 # target to generate assembly for a file
 Symbol.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Symbol.cpp.s
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Symbol.cpp.s
 .PHONY : Symbol.cpp.s
 
 Term.o: Term.cpp.o
@@ -521,7 +425,7 @@ Term.o: Term.cpp.o
 
 # target to build an object file
 Term.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Term.cpp.o
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Term.cpp.o
 .PHONY : Term.cpp.o
 
 Term.i: Term.cpp.i
@@ -529,7 +433,7 @@ Term.i: Term.cpp.i
 
 # target to preprocess a source file
 Term.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Term.cpp.i
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Term.cpp.i
 .PHONY : Term.cpp.i
 
 Term.s: Term.cpp.s
@@ -537,39 +441,15 @@ Term.s: Term.cpp.s
 
 # target to generate assembly for a file
 Term.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/Term.cpp.s
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/Term.cpp.s
 .PHONY : Term.cpp.s
-
-TermShape.o: TermShape.cpp.o
-.PHONY : TermShape.o
-
-# target to build an object file
-TermShape.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/TermShape.cpp.o
-.PHONY : TermShape.cpp.o
-
-TermShape.i: TermShape.cpp.i
-.PHONY : TermShape.i
-
-# target to preprocess a source file
-TermShape.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/TermShape.cpp.i
-.PHONY : TermShape.cpp.i
-
-TermShape.s: TermShape.cpp.s
-.PHONY : TermShape.s
-
-# target to generate assembly for a file
-TermShape.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/TermShape.cpp.s
-.PHONY : TermShape.cpp.s
 
 XmlUtil.o: XmlUtil.cpp.o
 .PHONY : XmlUtil.o
 
 # target to build an object file
 XmlUtil.cpp.o:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/XmlUtil.cpp.o
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/XmlUtil.cpp.o
 .PHONY : XmlUtil.cpp.o
 
 XmlUtil.i: XmlUtil.cpp.i
@@ -577,7 +457,7 @@ XmlUtil.i: XmlUtil.cpp.i
 
 # target to preprocess a source file
 XmlUtil.cpp.i:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/XmlUtil.cpp.i
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/XmlUtil.cpp.i
 .PHONY : XmlUtil.cpp.i
 
 XmlUtil.s: XmlUtil.cpp.s
@@ -585,7 +465,7 @@ XmlUtil.s: XmlUtil.cpp.s
 
 # target to generate assembly for a file
 XmlUtil.cpp.s:
-	$(MAKE) -f CMakeFiles/tme6.dir/build.make CMakeFiles/tme6.dir/XmlUtil.cpp.s
+	$(MAKE) -f CMakeFiles/tme7.dir/build.make CMakeFiles/tme7.dir/XmlUtil.cpp.s
 .PHONY : XmlUtil.cpp.s
 
 # Help Target
@@ -600,22 +480,13 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... tme6"
-	@echo "... ArcShape.o"
-	@echo "... ArcShape.i"
-	@echo "... ArcShape.s"
+	@echo "... tme7"
 	@echo "... Box.o"
 	@echo "... Box.i"
 	@echo "... Box.s"
-	@echo "... BoxShape.o"
-	@echo "... BoxShape.i"
-	@echo "... BoxShape.s"
 	@echo "... Cell.o"
 	@echo "... Cell.i"
 	@echo "... Cell.s"
-	@echo "... EllipseShape.o"
-	@echo "... EllipseShape.i"
-	@echo "... EllipseShape.s"
 	@echo "... Indentation.o"
 	@echo "... Indentation.i"
 	@echo "... Indentation.s"
@@ -625,9 +496,6 @@ help:
 	@echo "... Line.o"
 	@echo "... Line.i"
 	@echo "... Line.s"
-	@echo "... LineShape.o"
-	@echo "... LineShape.i"
-	@echo "... LineShape.s"
 	@echo "... Main.o"
 	@echo "... Main.i"
 	@echo "... Main.s"
@@ -649,9 +517,6 @@ help:
 	@echo "... Term.o"
 	@echo "... Term.i"
 	@echo "... Term.s"
-	@echo "... TermShape.o"
-	@echo "... TermShape.i"
-	@echo "... TermShape.s"
 	@echo "... XmlUtil.o"
 	@echo "... XmlUtil.i"
 	@echo "... XmlUtil.s"

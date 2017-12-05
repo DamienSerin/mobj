@@ -1,7 +1,7 @@
-// -*- explicit-buffer-name: "Cell.cpp<M1-MOBJ/4-5>" -*-
-#include  <string>
-#include  <fstream>
+// -*- explicit-buffer-name: "Cell.cpp<M1-MOBJ/8-10>" -*-
+
 #include  <cstdlib>
+#include  <fstream>
 #include  "XmlUtil.h"
 #include  "Cell.h"
 #include  "Term.h"
@@ -17,6 +17,10 @@ namespace Netlist {
     vector<Cell*>  Cell::cells_;
 
 
+    vector<Cell*>& Cell::getAllCells ()
+    { return cells_; }
+
+
     Cell* Cell::find ( const string& name )
     {
         for ( vector<Cell*>::iterator icell=cells_.begin() ; icell != cells_.end() ; ++icell ) {
@@ -26,8 +30,44 @@ namespace Netlist {
     }
 
 
+    Cell* Cell::load ( const string& cellName )
+    {
+        string           cellFile = "./cells/" + cellName + ".xml";
+        xmlTextReaderPtr reader;
+
+        cerr << "Loading <" << cellFile << ">" << endl;
+        reader = xmlNewTextReaderFilename( cellFile.c_str() );
+        if (reader == NULL) {
+            cerr << "[ERROR] Cell::load() unable to open file <" << cellFile << ">." << endl;
+            return NULL;
+        }
+
+        Cell* cell = Cell::fromXml( reader );
+        xmlFreeTextReader( reader );
+
+        return cell;
+    }
+
+
+    void  Cell::save ( const std::string& name ) const
+    {
+        string  fileName = (name.empty()) ? getName() + ".xml" : name + ".xml";
+        fstream fstream ( fileName.c_str(), ios_base::out|ios_base::trunc );
+        if (not fstream.good()) {
+            cerr << "[ERROR] Cell::save() unable to open file <" << fileName << ">." << endl;
+            return;
+        }
+
+        cerr << "Saving <Cell " << getName() << "> in <" << fileName << ">" << endl;
+        toXml( fstream );
+
+        fstream.close();
+    }
+
+
     Cell::Cell ( const string& name )
-    : name_     (name)
+    : symbol_   (this)  // TME7
+    , name_     (name)
     , terms_    ()
     , instances_()
     , nets_     ()
@@ -78,7 +118,6 @@ namespace Netlist {
     Net* Cell::getNet ( const std::string& name ) const
     {
         for ( vector<Net*>::const_iterator inet=nets_.begin() ; inet != nets_.end() ; ++inet ) {
-            //cerr << (*inet)->getName() << " != " << name << endl;
             if ((*inet)->getName() == name)  return *inet;
         }
         return NULL;
@@ -118,12 +157,10 @@ namespace Netlist {
 
     void  Cell::add ( Net* net )
     {
-        //cout << "Cell:add called " << (void*)net << " " << net->getName() << endl;
         if (getNet(net->getName())) {
             cerr << "[ERROR] Attemp to add duplicated Net <" << net->getName() << ">." << endl;
             exit( 1 );
         }
-
         nets_.push_back( net );
     }
 
@@ -316,35 +353,5 @@ namespace Netlist {
             return cell;
         }
 
-        Cell* Cell::load ( const string& cellName )
-        {
-            string cellFile = "./cells/" + cellName + ".xml";
-            xmlTextReaderPtr reader;
 
-            reader = xmlNewTextReaderFilename( cellFile.c_str() );
-            if (reader == NULL) {
-                cerr << "[ERROR] Cell::load() unable to open file <" << cellFile << ">." << endl;
-                return NULL;
-            }
-
-            Cell* cell = Cell::fromXml( reader );
-            xmlFreeTextReader( reader );
-
-            return cell;
-        }
-
-        void  Cell::save ( const std::string& name ) const
-        {
-          string  fileName = (name.empty()) ? getName() + ".xml" : name + ".xml";
-          fstream fstream ( fileName.c_str(), ios_base::out|ios_base::trunc );
-          if (not fstream.good()) {
-            cerr << "[ERROR] Cell::save() unable to open file <" << fileName << ">." << endl;
-            return;
-          }
-
-          cerr << "Saving <Cell " << getName() << "> in <" << fileName << ">" << endl;
-          toXml( fstream );
-
-          fstream.close();
-        }
     }  // Netlist namespace.

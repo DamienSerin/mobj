@@ -19,11 +19,6 @@ cmake_minimum_required(VERSION 2.8.0)
                                       Line.h
                                       Box.h
                                       Shape.h
-                                      LineShape.h
-                                      BoxShape.h
-                                      EllipseShape.h
-                                      ArcShape.h
-                                      TermShape.h
                                       Symbol.h
 
 
@@ -41,15 +36,10 @@ cmake_minimum_required(VERSION 2.8.0)
                                       Line.cpp
                                       Box.cpp
                                       Shape.cpp
-                                      LineShape.cpp
-                                      BoxShape.cpp
-                                      EllipseShape.cpp
-                                      ArcShape.cpp
-                                      TermShape.cpp
                                       Symbol.cpp
                        )
 
-        add_executable ( tme6        ${cpps} )
-        target_link_libraries ( tme6 ${LIBXML2_LIBRARIES} )
-               install ( TARGETS      tme6        DESTINATION bin )
+        add_executable ( tme7        ${cpps} )
+        target_link_libraries ( tme7 ${LIBXML2_LIBRARIES} )
+               install ( TARGETS      tme7        DESTINATION bin )
                install ( FILES        ${includes}  DESTINATION include )

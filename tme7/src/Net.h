@@ -23,7 +23,7 @@ namespace Netlist {
 			inline 	const 	std::string& 				getName			() 			const;
 			inline 			unsigned int 				getId			() 			const;
 			inline 			Term::Type 					getType			() 			const;
-			inline 			Node* 						getNode			(size_t id) const;
+			 			Node* 						getNode			(size_t id) const;
 			inline 	const 	std::vector<Node*>&			getNodes		() 			const;
 			inline 	const 	std::vector<Line*>& 		getLines 		() 			const;
 							size_t 						getFreeNodeId	() 			const;
@@ -49,7 +49,7 @@ namespace Netlist {
 	inline const std::string& Net::getName() const{return name_;}
 	inline unsigned int Net::getId() const{return id_;}
 	inline Term::Type Net::getType() const{return type_;}
-	inline Node* Net::getNode( size_t id) const{return nodes_[id];}
+	//inline Node* Net::getNode( size_t id) const{return nodes_[id];}
 	inline const std::vector <Node*>& Net::getNodes() const{return nodes_;}
 	inline const std::vector<Line*>& Net::getLines () const{ return lines_; }
 }
