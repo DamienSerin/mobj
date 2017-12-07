@@ -56,18 +56,6 @@ Point.h
 Node.h
 /home/damien/Documents/mobj/tme7/src/Node.h
 
-/home/damien/Documents/mobj/tme7/src/Net.cpp
-Node.h
-/home/damien/Documents/mobj/tme7/src/Node.h
-Instance.h
-/home/damien/Documents/mobj/tme7/src/Instance.h
-Net.h
-/home/damien/Documents/mobj/tme7/src/Net.h
-Cell.h
-/home/damien/Documents/mobj/tme7/src/Cell.h
-XmlUtil.h
-/home/damien/Documents/mobj/tme7/src/XmlUtil.h
-
 /home/damien/Documents/mobj/tme7/src/Net.h
 limits
 -
