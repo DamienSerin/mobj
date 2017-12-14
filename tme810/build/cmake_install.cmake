@@ -63,8 +63,11 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/damien/Documents/mobj/tme810/src/Shape.h"
     "/home/damien/Documents/mobj/tme810/src/Symbol.h"
     "/home/damien/Documents/mobj/tme810/src/SaveCellDialog.h"
+    "/home/damien/Documents/mobj/tme810/src/OpenCellDialog.h"
     "/home/damien/Documents/mobj/tme810/src/CellWidget.h"
     "/home/damien/Documents/mobj/tme810/src/CellViewer.h"
+    "/home/damien/Documents/mobj/tme810/src/InstancesModel.h"
+    "/home/damien/Documents/mobj/tme810/src/InstancesWidget.h"
     )
 endif()
 

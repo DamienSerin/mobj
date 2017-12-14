@@ -25,8 +25,11 @@ cmake_minimum_required(VERSION 2.8.0)
                        )
                     set( mocIncludes
                                       SaveCellDialog.h
+                                      OpenCellDialog.h
                                       CellWidget.h
                                       CellViewer.h
+                                      InstancesModel.h
+                                      InstancesWidget.h
 
                         )
                     set( cpps         Indentation.cpp
@@ -42,9 +45,12 @@ cmake_minimum_required(VERSION 2.8.0)
                                       Box.cpp
                                       Shape.cpp
                                       Symbol.cpp
-				      SaveCellDialog.cpp
-				      CellWidget.cpp
-				      CellViewer.cpp
+                				      SaveCellDialog.cpp
+                                      OpenCellDialog.cpp
+                				      CellWidget.cpp
+                				      CellViewer.cpp
+                                      InstancesModel.cpp
+                                      InstancesWidget.cpp
                        )
 
         qt4_wrap_cpp(mocCpps    ${mocIncludes})

@@ -98,22 +98,22 @@ namespace Netlist {
         const xmlChar* nodeTag  = xmlTextReaderConstString        ( reader, (const xmlChar*)"net" );
         const xmlChar* nodeName = xmlTextReaderConstLocalName     ( reader );
 
-        //vérification du nom du node actuel par rapport au Tag demandé + le node ne doit pas être une balise de fermeture
+
         if((nodeTag == nodeName) and !(xmlTextReaderNodeType(reader) == XML_READER_TYPE_END_ELEMENT))
         {
-            //récupération des attributs du Net
+
             std::string netName = xmlCharToString( xmlTextReaderGetAttribute( reader, (const xmlChar*)"name" ) );
             std::string netType = xmlCharToString( xmlTextReaderGetAttribute( reader, (const xmlChar*)"type" ) );
 
-            //création du Net
+
             Term::Type t = Term::toType(netType);
             net = new Net(c, netName, t);
             const xmlChar* nTag     = xmlTextReaderConstString        ( reader, (const xmlChar*)"node" );
             const xmlChar* lineTag  = xmlTextReaderConstString        ( reader, (const xmlChar*)"line" );
 
-            //Parcours des éléments fils du net jusqu'à la balise de fermeture
+
             while(!((nodeTag == nodeName) and (xmlTextReaderNodeType(reader) == XML_READER_TYPE_END_ELEMENT))){
-                //on fait avancer le pointeur
+
                 xmlTextReaderRead(reader);
 
                 switch ( xmlTextReaderNodeType(reader) ) {
@@ -126,7 +126,6 @@ namespace Netlist {
                 const xmlChar* tmpNodeName = xmlTextReaderConstLocalName     ( reader );
 
                 if(tmpNodeName == nTag){
-                    //Appelle de Node::fromXml() pour connecter le net au term.
                     if( !(Node::fromXml(net, reader)) ) return NULL;
                 }
                 if(tmpNodeName == lineTag){
