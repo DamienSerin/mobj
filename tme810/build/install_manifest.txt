@@ -17,3 +17,5 @@
 /home/damien/Documents/mobj/tme810/build/../install/include/CellViewer.h
 /home/damien/Documents/mobj/tme810/build/../install/include/InstancesModel.h
 /home/damien/Documents/mobj/tme810/build/../install/include/InstancesWidget.h
+/home/damien/Documents/mobj/tme810/build/../install/include/CellsLib.h
+/home/damien/Documents/mobj/tme810/build/../install/include/CellsModel.h

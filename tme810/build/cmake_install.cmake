@@ -68,6 +68,8 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/damien/Documents/mobj/tme810/src/CellViewer.h"
     "/home/damien/Documents/mobj/tme810/src/InstancesModel.h"
     "/home/damien/Documents/mobj/tme810/src/InstancesWidget.h"
+    "/home/damien/Documents/mobj/tme810/src/CellsLib.h"
+    "/home/damien/Documents/mobj/tme810/src/CellsModel.h"
     )
 endif()
 

@@ -1,5 +1,6 @@
 #include"Cell.h"
 #include"CellViewer.h"
+#include"CellsLib.h"
 #include<QAction>
 #include<QMenuBar>
 #include<QMenu>
@@ -8,13 +9,16 @@
 
 namespace Netlist {
 
-    CellViewer::CellViewer(QWidget * parent):QMainWindow(parent), cellWidget_(NULL), instancesWidget_(NULL), saveCellDialog_(NULL){
+    CellViewer::CellViewer(QWidget * parent):QMainWindow(parent), cellWidget_(NULL), cellsLib_(NULL), instancesWidget_(NULL), saveCellDialog_(NULL){
         cellWidget_ = new CellWidget();
         saveCellDialog_ = new SaveCellDialog( this );
 
         instancesWidget_ = new InstancesWidget();
+        cellsLib_ = new CellsLib();
 
         instancesWidget_->setCellViewer(this);
+        cellsLib_->setCellViewer(this);
+
 
         setCentralWidget ( cellWidget_ );
 
@@ -36,6 +40,14 @@ namespace Netlist {
         fileMenu->addAction( action );
         connect( action , SIGNAL( triggered()) , this , SLOT( openCell()));
 
+        action = new QAction( "&CellsLib" , this );
+        action->setStatusTip( "Open Cells Lib" );
+        action->setShortcut( QKeySequence ("CTRL+C") );
+        action->setVisible( true );
+
+        fileMenu->addAction( action );
+        connect( action , SIGNAL( triggered()) , this , SLOT( showCellsLib() ) );
+
         action = new QAction( "&InstancesWidget" , this );
         action->setStatusTip( "Open Instances Widget" );
         action->setShortcut( QKeySequence ("CTRL+I") );
@@ -51,6 +63,8 @@ namespace Netlist {
 
         fileMenu->addAction( action );
         connect( action , SIGNAL( triggered()) , this , SLOT( close()) );
+
+        connect(this, SIGNAL(cellLoaded()), cellsLib_->getBaseModel(), SLOT(updateDatas()));
 
     }
 
@@ -68,6 +82,8 @@ namespace Netlist {
 
     void CellViewer::setCell(Cell* cell){
         cellWidget_->setCell(cell);
+        instancesWidget_->setCell(cell);
+
     }
 
     Cell* CellViewer::getCell() const {
@@ -82,6 +98,8 @@ namespace Netlist {
 
             if(!cell){
                 cell = Cell::load(name.toStdString());
+                cellsLib_->getBaseModel()->updateDatas();
+                emit cellLoaded();
             }
             if(cell){
                 setCell(cell);
@@ -93,5 +111,10 @@ namespace Netlist {
         std::cout << "instwidget" << std::endl;
         instancesWidget_->setCell(CellViewer::getCell());
         instancesWidget_->show();
+    }
+
+    void CellViewer::showCellsLib(){
+        std::cout << "cellslib" << std::endl;
+        cellsLib_->show();
     }
 }

@@ -1,6 +1,8 @@
 # Hashes of file build rules.
 4cbc2959fe7f66a184c072be7e64c71a moc_CellViewer.cxx
 e4b2a9f962d08fafcf5077496cc36764 moc_CellWidget.cxx
+d961142b0baa4158dce3ced65f87912f moc_CellsLib.cxx
+e702122d9590d9f6da06c4c2e27cf1c8 moc_CellsModel.cxx
 24d6b2a95871a0c80dd4fbe3ce06ed46 moc_InstancesModel.cxx
 55736d77b7961b5d10ab68f376725862 moc_InstancesWidget.cxx
 29fd099c2852070004dd0ff88d38611b moc_OpenCellDialog.cxx

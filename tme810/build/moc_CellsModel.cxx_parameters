@@ -1,0 +1,11 @@
+-I/usr/include/qt4
+-I/usr/include/qt4/QtGui
+-I/usr/include/qt4/QtCore
+-I/home/damien/Documents/mobj/tme810/src
+-I/usr/include/libxml2
+-D$<$<NOT:$<CONFIG:Debug>>:QT_NO_DEBUG>
+-DQT_GUI_LIB
+-DQT_CORE_LIB
+-o
+/home/damien/Documents/mobj/tme810/build/moc_CellsModel.cxx
+/home/damien/Documents/mobj/tme810/src/CellsModel.h

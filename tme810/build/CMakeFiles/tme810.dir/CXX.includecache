@@ -87,6 +87,8 @@ QPushButton
 -
 InstancesModel.h
 /home/damien/Documents/mobj/tme810/src/InstancesModel.h
+QCloseEvent
+-
 
 /home/damien/Documents/mobj/tme810/src/OpenCellDialog.h
 QDialog
@@ -931,6 +933,10 @@ QtCore/QPoint
 /usr/include/qt4/QtGui/QApplication
 qapplication.h
 /usr/include/qt4/QtGui/qapplication.h
+
+/usr/include/qt4/QtGui/QCloseEvent
+qevent.h
+/usr/include/qt4/QtGui/qevent.h
 
 /usr/include/qt4/QtGui/QDialog
 qdialog.h

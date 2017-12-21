@@ -30,6 +30,8 @@ cmake_minimum_required(VERSION 2.8.0)
                                       CellViewer.h
                                       InstancesModel.h
                                       InstancesWidget.h
+                                      CellsLib.h
+                                      CellsModel.h
 
                         )
                     set( cpps         Indentation.cpp
@@ -51,6 +53,8 @@ cmake_minimum_required(VERSION 2.8.0)
                 				      CellViewer.cpp
                                       InstancesModel.cpp
                                       InstancesWidget.cpp
+                                      CellsLib.cpp
+                                      CellsModel.cpp
                        )
 
         qt4_wrap_cpp(mocCpps    ${mocIncludes})

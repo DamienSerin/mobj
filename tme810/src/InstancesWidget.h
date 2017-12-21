@@ -2,6 +2,7 @@
 #include<QTableView>
 #include<QPushButton>
 #include"InstancesModel.h"
+#include<QCloseEvent>
 
 namespace Netlist {
 
@@ -15,6 +16,7 @@ namespace Netlist {
         void setCellViewer(CellViewer*);
         int getSelectedRow() const;
         inline void setCell(Cell*);
+        virtual void closeEvent(QCloseEvent*);
 
     public slots:
         void load();

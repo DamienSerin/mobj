@@ -7,6 +7,7 @@ namespace Netlist {
 
     class Cell;
     class InstancesWidget;
+    class CellsLib;
 
     class CellViewer:public QMainWindow {
         Q_OBJECT;
@@ -19,11 +20,13 @@ namespace Netlist {
         void        setCell             ( Cell* );
         void        saveCell            ();
         void        openCell            ();
-        //void      showCellsLib        ();  // TME9+.
+        void      showCellsLib        ();  // TME9+.
         void      showInstancesWidget ();  // TME9+.
+    signals:
+        void cellLoaded();
     private:
         CellWidget*      cellWidget_;
-        //CellsLib*        cellsLib_;         // TME9+.
+        CellsLib*        cellsLib_;         // TME9+.
         InstancesWidget* instancesWidget_;  // TME9+.
         SaveCellDialog*  saveCellDialog_;
 

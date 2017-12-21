@@ -1,14 +1,14 @@
-#include"InstancesWidget.h"
+#include"CellsLib.h"
 #include"Cell.h"
 #include"CellViewer.h"
 #include<QHeaderView>
 
 
 namespace Netlist{
-    InstancesWidget::InstancesWidget(QWidget* parent)
+    CellsLib::CellsLib(QWidget* parent)
         :QWidget(parent)
         , cellViewer_(NULL)
-        , baseModel_(new InstancesModel(this))
+        , baseModel_(new CellsModel(this))
         , view_(new QTableView(this))
         , load_(new QPushButton(this))
     {
@@ -50,25 +50,25 @@ namespace Netlist{
         setLayout( vLayout );
     }
 
-    void InstancesWidget::setCellViewer(CellViewer* cellViewer){
+    void CellsLib::setCellViewer(CellViewer* cellViewer){
         if(cellViewer_)
             disconnect(this,0,cellViewer_,0);
         cellViewer_ = cellViewer;
     }
 
-    int InstancesWidget::getSelectedRow() const {
+    int CellsLib::getSelectedRow() const {
         QModelIndexList selecteds = view_->selectionModel()->selection().indexes();
         if(selecteds.empty()) return -1;
         return selecteds.first().row();
     }
 
-    void InstancesWidget::load(){
+    void CellsLib::load(){
         int selectedRow = getSelectedRow();
         if(selectedRow < 0) return;
-        cellViewer_->setCell(baseModel_->getModel(selectedRow));
+        if(cellViewer_) cellViewer_->setCell(Cell::getAllCells()[selectedRow]);
     }
 
-    void InstancesWidget::closeEvent(QCloseEvent* event){
+    void CellsLib::closeEvent(QCloseEvent* event){
         this->showMinimized();
         event->ignore();
     }
